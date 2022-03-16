@@ -1,7 +1,7 @@
-package hello.springmvc.basic.response;
+package hello.springmvc.servlet.basic.response;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import hello.springmvc.basic.HelloData;
+import hello.springmvc.servlet.basic.HelloData;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 @WebServlet(name = "responseJsonServlet", urlPatterns = "/response-json")
 public class ResponseJsonServlet extends HttpServlet {

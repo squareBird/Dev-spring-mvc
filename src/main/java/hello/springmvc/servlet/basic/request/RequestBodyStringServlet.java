@@ -1,4 +1,4 @@
-package hello.springmvc.basic.request;
+package hello.springmvc.servlet.basic.request;
 
 import org.springframework.util.StreamUtils;
 
