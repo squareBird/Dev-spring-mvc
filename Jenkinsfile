@@ -1,6 +1,9 @@
 // JenkinsFile
 pipeline {
     agent any
+    environment {
+        pjname = 'Springboot-MVC'
+    }
     stages {
         stage('Build') {
             steps {
