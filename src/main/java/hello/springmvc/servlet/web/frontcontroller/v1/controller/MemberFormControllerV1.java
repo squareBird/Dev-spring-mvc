@@ -1,17 +1,16 @@
-package hello.springmvc.servlet.web.servletmvc;
+package hello.springmvc.servlet.web.frontcontroller.v1.controller;
+
+import hello.springmvc.servlet.web.frontcontroller.v1.ControllerV1;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "mvcMemberFormServlet", urlPatterns = "/servlet-mvc/members/new-form")
-public class MvcMemberFormServlet extends HttpServlet {
+public class MemberFormControllerV1 implements ControllerV1 {
     @Override
-    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // WEB-INF 밑에 있으면 디스패쳐를 통해서만 불러짐
         // 그냥 127.0.0.1/WEB-INF/views/new-form.jsp 하면 안불러짐
         // 항상 이 /servlet-mvc/members/new-form을 통해서 들어가야함
@@ -20,5 +19,5 @@ public class MvcMemberFormServlet extends HttpServlet {
         // 포워드 : 서버 내부에서 일어나는 호출이기 때문에 클라이언트가 인식하지 못함
         RequestDispatcher dispatcher = request.getRequestDispatcher(viewPath);
         dispatcher.forward(request, response);
-        }
+    }
 }
